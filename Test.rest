@@ -1,0 +1,87 @@
+
+//afficher tous les produits
+GET  http://localhost:3000/products
+###
+
+//afficher tous les magasin
+GET  http://localhost:8000/markets
+
+
+###
+
+///Ajouter un magasin
+POST  http://localhost:8000/markets/addmarket
+Content-Type: application/json
+
+{
+    "name":"Uno",
+    "lat":10,
+    "lon":3,
+    "image":"https://staticsbmstationery.s3.amazonaws.com/images/surface/uno.jpg",
+    "rating":5
+
+    
+}
+###
+//Ajouter un produit
+
+POST  http://localhost:3000/products/addproduct
+Content-Type: application/json
+
+{
+    "name":"pois chiche",
+    "price":1.4,
+    "discount":0.6,
+    "quantity":3,
+    "category":"Conserves"
+}
+
+###
+
+//Ajouter un produit à un magasin
+//.../marketproducts/:nom_du_magasin
+POST  http://localhost:8000/marketproducts/Carrefour
+Content-Type: application/json
+
+{
+    "name":"Zebda",
+    "price":1.4,
+    "discount":0.6,
+    "quantity":16,
+    "category":"Matiere Grasse"
+    
+    
+
+}
+
+###
+
+GET  http://localhost:8000/marketproducts/markets/5fd12a3ca560d63804812130
+
+
+###
+GET http://localhost:8000/markets/5fd27ab59969c135e0f9cb20
+
+
+###
+PUT   http://localhost:8000/markets/Stenopy/updateCoordinate
+Content-Type: application/json
+
+{
+    "lat":5,
+    "lng":12
+
+}
+
+###
+POST    http://localhost:8000/markets/login
+Content-Type: application/json
+
+{
+    "email":"mohamed.abdoune@gmail.com",
+    "password":"987654321"
+
+}
+
+###
+GET     http://localhost:8000/markets/mycollegues
